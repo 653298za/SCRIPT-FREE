@@ -1,78 +1,8 @@
 local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/Attrixx/FreeScripts/main/YTUILib1.lua"))():init("BANER HUB")
 
-local Tab = Library:Tab("Auto fram")
-
-local Section = Tab:Section("Auto fram")
+local Tab = Library:Tab("Auto Fram")
+local Section = Tab:Section("AUTO")
 
 Section:Toggle("Auto Fram", false / true, function(value)
-    print(value)
-end) 
-_G.AUTOFARM = true
-    local Level = game.Players.LocalPlayer.Data.Level.Value
-    
-    while _G.AUTOFARM do wait()
-	if Level >= 1975 or Level <= 2100 then 
-	    Ms = "Reborn Skeleton [Lv. 1975]"
-        NQ = "HauntedQuest1"
-	    QN = 1 	 
-	    QP = CFrame.new(-9481.75586, 142.130661, 5566.18701, 0.0435660966, 3.77029963e-08, -0.999050558, -4.38536993e-08, 1, 3.58264742e-08, 0.999050558, 4.22512407e-08, 0.0435660966)
-	    PUK = CFrame.new(-8583.75879, 206.057083, 5861.28662, 0.217861339, 0, -0.975979745, -0, 1, -0, 0.975979745, 0, 0.217861339)
-        end  
-  pcall(function()
-        if game.Players.LocalPlayer.PlayerGui.Main.Quest.Visible == true then
-            -- nothing
-        else
-    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = QP
-    wait(1.5)
-    local args = {
-        [1] = "StartQuest",
-        [2] = NQ,
-        [3] = QN
-    }
-    
-    game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer(unpack(args))
-    wait(1.5)
-    end
-    
-    function bringmon()
-        for i,v in pairs(game:GetService("Workspace").Enemies:GetChildren()) do
-            for k,x in pairs(game:GetService("Workspace").Enemies:GetChildren()) do
-                if x.Name == Ms then
-                    if v.Name == Ms then
-                        v.HumanoidRootPart.CFrame = x.HumanoidRootPart.CFrame
-                        v.HumanoidRootPart.CanCollide = false
-                        sethiddenproperty(game.Players.LocalPlayer, "SimulationRadius", math.huge)
-                    end
-                end
-            end
-        end
-    end
-    for i,v in pairs(game.Workspace.Enemies:GetChildren()) do
-        if v.Name == Ms then
-    v.HumanoidRootPart.Size = Vector3.new(60,60,60)
-    v.HumanoidRootPart.Transparency = 1
-        end
-    end
-    
-            for i,v in pairs(game.Workspace.Enemies:GetChildren()) do
-                if v.Name == Ms and v.Humanoid.Health == 0 then
-                    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = PUK
-                        elseif v.Name == Ms then
-                        game.Players.LocalPlayer.Character.Humanoid:ChangeState(11)
-                        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.HumanoidRootPart.CFrame * CFrame.new(0,20,0)
-                    end
-                end
-    
-                bringmon()
-    
-                    game:GetService'VirtualUser':CaptureController()
-                    game:GetService'VirtualUser':Button1Down(Vector2.new(1280, 672))
-                    if game.Players.LocalPlayer.Character:FindFirstChild("HasBuso") then
-                    else
-                    local args = {
-                        [1] = "Buso"
-                    }
-                    game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer(unpack(args))
-                    end
-                end)
-            end
+    loadstring(game:HttpGet"https://raw.githubusercontent.com/653298za/BANERHUB-/main/Free-script")()
+end)
